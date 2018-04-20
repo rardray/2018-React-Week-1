@@ -90,11 +90,32 @@
             return new Percussion(name, size, key, 6, true, true)
         }
     }
+    
     class Strings extends Instrument {
         constructor(name, size, key, difficulty) {
             super(name, 'strings', size, key, difficulty)
         }
     }
+
+    class Brass extends Instrument {
+        constructor(name, size, key, difficulty, keys) {
+            super(name, 'brass', size, key, difficulty)
+            this.keys = keys
+        }
+        static withKeys(name, size, key) {
+            return new Brass(name, size, key, 8, true)
+        }
+        static withSlide(name, size, key) {
+            return new Brass(name, size, key, 4, false)
+        }
+    }
+    
+    //brass
+    const trumpet = Brass.withKeys('trumpet', 'small', 'C')
+    const trombone = Brass.withSlide('trombone', 'medium', 'C')
+    const frenchHorn = Brass.withKeys('frenchHorn', 'medium', 'Bb')
+    const barritone = Brass.withKeys('barritone', 'medium', 'C')
+    const tuba = Brass.withKeys('tuba', 'large', 'C')
     
     //strings
     const violin = new Strings('violin', 'small', 'C', 8)
