@@ -58,27 +58,7 @@
         }
     }
 }
-/* simple math functions
-function plusOne(mOne, name) {
-   if (mOne < 9) {
-       mOne =+ 1
-       return mOne
-    } else if (mOne >= 9) {
-        mOne =+ 1
-        mOne = 'mastered'
-        return `congratulations, you have mastered the ${name}!`
-    } else { }
-}
-function plusTwo(mTwo, name) {
-    if (mTwo < 8) {
-       mTwo =+ 2
-       return mTwo
-    } else if (mTwo >= 8) {
-        mTwo =+ 2
-        mTwo = 'mastered'
-        return `congratulations, you have mastered the ${name}!`
-    } else { }
-    } */
+
 //instrument sub classes
 
     class Woodwinds extends Instrument {
@@ -110,12 +90,25 @@ function plusTwo(mTwo, name) {
             return new Percussion(name, size, key, 6, true, true)
         }
     }
+    class Strings extends Instrument {
+        constructor(name, size, key, difficulty) {
+            super(name, 'strings', size, key, difficulty)
+        }
+    }
+    
+    //strings
+    const violin = new Strings('violin', 'small', 'C', 8)
+    const viola = new Strings('viola', 'small', 'C', 7)
+    const cello = new Strings('cello', 'medium', 'C', 6)
+    const contrabass = new Strings('contrabass', 'large', 'C', 5)
+    contrabass.mastery = 4
+
     //percussion
     const piano = Percussion.tunedKeys('piano', 'large', 'C')
     const timpani = Percussion.noKeys('timpani', 'large', 'N/A')
     const xylaphone = Percussion.strikedKeys('xylaphone', 'medium', 'C')
+    
     //woodwinds
-   
     const bassoon = new Woodwinds('bassoon', 'medium', 'b flat', 8, 2)
     bassoon.mastery = 7
     const flute = Woodwinds.singleReeded('flute', 'small', 'C')
@@ -128,8 +121,6 @@ function plusTwo(mTwo, name) {
     console.log(flute.about())
     console.log(flute.section())
     console.log(bassoon.practice(15))
-    console.log(bassoon.practice(15))
-    console.log(bassoon.practice(15))
     console.log(bassoon.mastery)
     console.log(clarinet.about())
     console.log(contrabassoon.about())
@@ -139,6 +130,20 @@ function plusTwo(mTwo, name) {
     console.log(timpani.section())
     console.log(xylaphone.about())
     console.log(piano)
+    console.log(violin.about())
+    console.log(violin.section())
+    console.log(viola.about())
+    console.log(viola.section())
+    console.log(cello.about())
+    console.log(cello.section())
+    console.log(contrabass.about())
+    console.log(contrabass.section())
+    console.log(contrabass.practice(49))
+    console.log(contrabass.practice(8))
+    console.log(contrabass.practice(12))
+    console.log(contrabass.practice(49))
+    console.log(bassoon.practice(15))
+    console.log(bassoon.practice(15))
     </script>
     <header>
     <h1>Object Homework
